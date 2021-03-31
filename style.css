@@ -1,0 +1,186 @@
+*,
+::before,
+::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+.day {
+    background: linear-gradient(#77bafa, #a9bffc, #fdfdfd);
+    height: 50%;
+    width: 100%;
+}
+.night {
+    background: linear-gradient(rgb(39, 39, 39), rgb(19, 19, 19), black);
+    height: 50%;
+    width: 100%;
+}
+.day .sun {
+  position: absolute;
+  animation: sunrise 10s linear infinite;
+}
+.day .sun div {
+  position: absolute;
+  height: 80px;
+  width: 80px;
+  top:70%;
+  left:10%;
+  background: linear-gradient(#e2ab13, #e6de08, #e6d10f);
+  border-radius: 50%;
+}
+.day .sun div:nth-child(1) {
+  filter: blur(0px);
+}
+.day .sun div:nth-child(2) {
+  filter: blur(30px);
+}
+.day .sun div:nth-child(3) {
+  filter: blur(60px);
+}
+.day .sun div:nth-child(4) {
+  filter: blur(90px);
+}
+.day .sun div:nth-child(5) {
+  filter: blur(120px);
+}
+
+@keyframes sunrise {
+  0% {
+    left: 0%;
+    top: 30%;
+  }
+  25% {
+    left: 25%;
+    top: 20%;
+  }
+  50% {
+    left: 50%;
+    top: 10%;
+    transform: translate(-30%, 0%);
+  }
+  75% {
+    left: 75%;
+    top: 20%;
+  }
+  100% {
+    left: 100%;
+    top: 30%;
+  }
+}
+.night .moon {
+    position: absolute;
+    animation: moonlight 10s linear infinite;
+}
+.night .moon div {
+  position: absolute;
+  height: 80px;
+  width: 80px;
+  background: linear-gradient(#77bafa, #a9bffc, #fdfdfd);
+  border-radius: 50%;
+}
+.night .moon div:nth-child(1) {
+  filter: blur(0px);
+}
+.night .moon div:nth-child(2) {
+  filter: blur(30px);
+}
+.night .moon div:nth-child(3) {
+  filter: blur(60px);
+}
+.night .moon div:nth-child(4) {
+  filter: blur(90px);
+}
+.night .moon div:nth-child(5) {
+  filter: blur(120px);
+}
+ @keyframes moonlight { 
+    0% {
+      right: 0%;
+      bottom: 30%;
+    }
+    25% {
+      right: 25%;
+      bottom:20%;
+    }
+    50% {
+      right: 50%;
+      bottom: 10%;
+      transform: translate(30%, 0%);
+    }
+    75% {
+      right: 75%;
+      bottom: 20%;
+    }
+    100% {
+      right: 100%;
+      bottom: 30%;
+    }
+  } 
+@media screen and (max-width: 768px) {
+    .day .sun div {
+        position: absolute;
+        height: 80px;
+        width: 80px;
+        background: linear-gradient(#f8741c, #e9e63d, #d1e60f);
+        border-radius: 50%;
+      }
+      @keyframes sunrise {
+        0% {
+          left: -20%;
+          top: 20%;
+        }
+        25% {
+          left: 15%;
+          top: 5%;
+        }
+        50% {
+          left: 45%;
+          top: 0%;
+          transform: translate(-20%, 0%);
+        }
+        75% {
+          left: 85%;
+          top: 5%;
+        }
+        100% {
+          left: 115%;
+          top: 30%;
+        }
+      }
+      .night .moon div {
+        position: absolute;
+        height: 80px;
+        width: 80px;
+        background: linear-gradient(#77bafa, #a9bffc, #fdfdfd);
+        border-radius: 50%;
+      }
+      @keyframes moonlight {
+        0% {
+          left: -20%;
+          bottom: 20%;
+        }
+        25% {
+          left: 15%;
+          bottom: 5%;
+        }
+        50% {
+          left: 45%;
+          bottom: 0%;
+          transform: translate(20%, 0%);
+        }
+        75% {
+          left: 85%;
+          bottom: 5%;
+        }
+        100% {
+          left: 115%;
+          bottom: 30%;
+        }
+      }
+}
